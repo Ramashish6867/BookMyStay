@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://bookmystay-r8s8.onrender.com/api",
 });
 
 API.interceptors.request.use(
@@ -15,9 +15,7 @@ API.interceptors.request.use(
 
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  },
+  (error) => Promise.reject(error),
 );
 
 API.interceptors.response.use(
