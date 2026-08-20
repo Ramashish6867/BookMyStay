@@ -2,6 +2,14 @@
 
 A full-stack hotel booking platform built with React, Node.js, Express.js, MongoDB, and JWT authentication.
 
+🌐 Live Demo
+
+Frontend: https://book-my-stay-egg0mi4ul-ram-ashish.vercel.app/
+
+Backend API: https://bookmystay-r8s8.onrender.com
+
+The frontend uses the deployed Render API for authentication, hotel listings, bookings, and protected operations.
+
 🚀 Features
 
 JWT-based user authentication
@@ -19,6 +27,8 @@ Pagination for 4,000+ imported hotel records
 Detailed hotel information
 
 Hotel facilities and room facilities
+
+Estimated demo pricing for imported hotels
 
 Hotel booking with date validation
 
@@ -64,7 +74,7 @@ Mongoose
 
 Database
 
-MongoDB
+MongoDB Atlas
 
 Tools
 
@@ -75,6 +85,10 @@ GitHub
 Postman
 
 VS Code
+
+Vercel
+
+Render
 
 📁 Project Structure
 
@@ -92,6 +106,7 @@ BookMyStay/
 │ ├── models/
 │ ├── routes/
 │ ├── scripts/
+│ │ ├── hotels.csv
 │ │ └── importHotels.js
 │ ├── .env.example
 │ └── server.js
@@ -130,25 +145,21 @@ Listing deletion
 
 🏨 Hotel Dataset
 
-The project imports hotel data from CSV into MongoDB.
+The application imports hotel information from CSV into MongoDB Atlas.
 
-The dataset includes information such as:
+The imported dataset contains 4,000 hotel records with information such as:
 
 Hotel name
 
-Location
-
-Address
+Location and address
 
 Star rating
 
 Guest rating
 
-Reviews
+Review count
 
-Room count
-
-Room type
+Room count and room type
 
 Hotel facilities
 
@@ -158,7 +169,7 @@ Nearby points of interest
 
 Latitude and longitude
 
-The import script is located at:
+The importer is located at:
 
 server/scripts/importHotels.js
 
@@ -175,11 +186,11 @@ Reads hotel records from CSV
 
 Validates hotel identifiers
 
-Converts facilities into arrays
+Converts pipe-separated facilities into arrays
 
-Generates estimated demo prices
+Generates clearly labelled estimated demo prices
 
-Inserts new hotels into MongoDB
+Inserts new hotels into MongoDB Atlas
 
 Updates existing hotels without creating duplicates
 
@@ -241,7 +252,7 @@ GET /api/bookings/:id
 PUT /api/bookings/:id
 DELETE /api/bookings/:id
 
-🔎 Filtering & Pagination
+🔎 Filtering, Sorting & Pagination
 
 The listings API supports:
 
@@ -257,13 +268,19 @@ Minimum guest rating
 
 Property type
 
-Sorting
+Sorting by rating, reviews, stars, and price
 
 Pagination
 
 Example:
 
 /api/listings?city=Manali&minStars=4&minRating=4&page=1&limit=20
+
+💰 Pricing
+
+Imported hotel records use estimated demo prices generated from hotel attributes. They are not live market rates.
+
+Host-created listings use the price entered by the host.
 
 🛡️ Security
 
@@ -285,37 +302,52 @@ Booking overlap prevention
 
 Environment variable protection
 
-📌 Current Status
+🚀 Deployment
 
-The application has been tested for:
+The production architecture is:
+
+Vercel
+React frontend
+↓
+Render
+Node + Express backend
+↓
+MongoDB Atlas
+4,000 hotel records
+
+The production backend is available at:
+
+https://bookmystay-r8s8.onrender.com
+
+📌 Tested Functionality
 
 Registration
 
-Login
-
-Logout
+Login and logout
 
 Hotel search
 
-Filters
-
-Sorting
+Filters and sorting
 
 Pagination
 
 Hotel details
 
-Booking
+Booking and date validation
 
-Booking updates
+Booking conflict prevention
 
-Booking cancellation
+My Bookings
+
+Booking update and cancellation
 
 Host listing CRUD
 
-Protected routes
+Protected routes and authorization
 
-Authorization
+Production API connectivity
+
+Production booking flow
 
 🔮 Future Improvements
 
@@ -331,7 +363,7 @@ Email booking confirmation
 
 Hotel availability calendar
 
-Production deployment
+Custom domain
 
 Advanced recommendation system
 
@@ -339,5 +371,4 @@ Advanced recommendation system
 
 Ramashish6867
 
-GitHub:
-https://github.com/Ramashish6867
+GitHub: https://github.com/Ramashish6867
