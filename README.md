@@ -4,7 +4,7 @@ A full-stack hotel booking platform built with React, Node.js, Express.js, Mongo
 
 🌐 Live Demo
 
-Frontend: https://book-my-stay-egg0mi4ul-ram-ashish.vercel.app/
+live link : https://book-my-stay-beige.vercel.app?_vercel_share=Xp4f6X3JyWpQawytItHnr7hDmqIRUlce
 
 Backend API: https://bookmystay-r8s8.onrender.com
 
